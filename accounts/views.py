@@ -14,7 +14,7 @@ def logout(request):
     """Log the user out"""
     auth.logout(request)
     messages.success(request, "You Have Successfully Been Logged Out!")
-    return redirect(reverse('index'))
+    return redirect(reverse('login'))
 
 
 def login(request):
@@ -41,7 +41,7 @@ def login(request):
 def registration(request):
     """Render the registration page"""
     if request.user.is_authenticated:
-        return redirect(reverse('index'))
+        return redirect(reverse('login'))
 
     if request.method == "POST":
         registration_form = UserRegistrationForm(request.POST)
@@ -53,7 +53,7 @@ def registration(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have been successfully registered")
-                return redirect(reverse('index'))
+                return redirect(reverse('login'))
             else:
                 messages.error(request, "Unable to register your account at this time")
     else:
