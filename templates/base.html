@@ -35,11 +35,13 @@
         {% endif %}
       </ul>
     </nav>
-    <h1>{% block page_heading %}{% endblock %}</h1>
-    <hr />
-    {% if messages %}
-    <div>
-      {% for message in messages %} {{ message }} {% endfor %}
+    <div class="container">
+      <h1>{% block page_heading %}{% endblock %}</h1>
+      <hr />
+      {% if messages %}
+      <div>
+        {% for message in messages %} {{ message }} {% endfor %}
+      </div>
     </div>
     {% endif %} {% block content %}{% endblock %}
   </body>
