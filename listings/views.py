@@ -1,10 +1,16 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from .forms import CreateListing
+from .models import Listing
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
+
+def all_listings(request):
+    listings = Listing.objects.all()
+    return render(request, "listings.html", {"listings": listings})
 
 
 @login_required
