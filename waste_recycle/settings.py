@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'listings',
     'home',
     'trunk',
+    'search',
 ]
 
 MIDDLEWARE = [
