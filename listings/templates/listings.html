@@ -12,10 +12,12 @@
         style="background-image: url('{{ MEDIA_URL }}{{ listing.image }}'"
       ></div>
       <h3>{{ listing.title }}</h3>
-      <p class="listing-description">{{ listing.description }}</p>
+      <p class="listing-description">{{ listing.description|truncatewords:15 }}</p>
       <p>{{ listing.location }}</p>
       <p>Collection Only</p>
       <p>Price: £{{ listing.price }}</p>
+      <a class="btn btn-info see-more-btn" href="{% url 'get_listing' listing.id %}">See More</a>
+      <!--
       <form method="post" action="{% url 'add_to_trunk' listing.id %}">
         {% csrf_token %}
         <div class="input-group">
@@ -31,7 +33,7 @@
             <button class="btn btn-success" type="submit">Add</button>
           </span>
         </div>
-      </form>
+      </form> -->
     </div>
   </div>
   {% endfor %}

@@ -19,38 +19,42 @@
         <div class="listing-center">
           <h3>{{ item.listing.title }}</h3>
           <p>£{{ item.listing.price }}</p>
-          <form
-            class="form-inline"
-            method="post"
-            action="{% url 'delete_item' item.id %}"
-          >
-            {% csrf_token %}
-            <div class="form-group">
-              <label for="exampleInputAmount" class="sr-only"
-                >Delete Item</label
-              >
-              <div class="input-group">
-                <div class="input-group-addon">
-                  <input
-                    name="quantity"
-                    type="number"
-                    min="0"
-                    max="1"
-                    class="form-control"
-                    placeholder="Quantity"
-                  />
+        </div>
+        <form
+          class="form-inline"
+          method="post"
+          action="{% url 'delete_item' item.id %}"
+        >
+          {% csrf_token %}
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="exampleInputAmount" class="sr-only"
+                  >Delete Item</label
+                >
+                <div class="input-group">
                   <div class="input-group-addon">
-                    {{ item.quantity }}
+                    <input
+                      name="quantity"
+                      type="number"
+                      min="0"
+                      max="1"
+                      class="form-control"
+                      placeholder="1"
+                    />
                   </div>
                 </div>
               </div>
-              <button class="btn btn-primary" type="submit">Update</button>
+              <div class="col-sm-6">
+                <button class="btn btn-primary" type="submit">Delete</button>
+              </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+
   {% endfor %}
 </div>
 <div class="row">

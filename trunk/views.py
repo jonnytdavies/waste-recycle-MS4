@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 
 # Create your views here.
 
@@ -20,14 +21,14 @@ def add_to_trunk(request, id):
     trunk[id] = trunk.get(id, quantity)
 
     request.session['trunk'] = trunk
-    return redirect(reverse('index'))
+    return redirect(reverse('view_trunk'))
 
 
 def delete_item(request, id):
     """
     Delete item from trunk
     """
-    quantity = int(request.POST.get('quanitity'))
+    quantity = int(request.POST.get('quantity'))
     trunk = request.session.get('trunk', {})
 
     if quantity > 0:
@@ -35,5 +36,7 @@ def delete_item(request, id):
     else:
         trunk.pop(id)
 
+
     request.session['trunk'] = trunk
-    return redirect(reverse('view_trunk'))
+    messages.success(request, "Your Trunk is empty")
+    return redirect(reverse('all_listings'))

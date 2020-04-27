@@ -42,3 +42,8 @@ caption p {
 .listing-card {
     margin-bottom: 20px;
 }
+
+.listing-image {
+    max-width: 300px;
+    max-height: auto;
+}

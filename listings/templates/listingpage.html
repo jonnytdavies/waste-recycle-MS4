@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-sm-12 col-md-6 listing-page-content">
     <div class="listing-image">
-      <img src="{{ MEDIA_URL }}{{ listing.image }}" alt="Listing Image" />
+      <img src="{{ MEDIA_URL }}{{ listing.image }}" alt="Listing Image" class="listing-image"/>
     </div>
     <div class="listing-description">
       <p>{{ listing.description}}</p>
@@ -16,10 +16,25 @@
     </div>
   </div>
   <div class="col-sm-12 col-md-6">
-  <div class="listing-price">
-  <p>Price: £{{ listing.price }}</p>
-  </div>
-  <button>Add to trunk</button>
+    <div class="listing-price">
+      <p>Price: £{{ listing.price }}</p>
+    </div>
+    <form method="post" action="{% url 'add_to_trunk' listing.id %}">
+      {% csrf_token %}
+      <div class="input-group">
+        <input
+          name="quantity"
+          type="number"
+          min="1"
+          max="1"
+          class="form-control"
+          placeholder="Quantity"
+        />
+        <span class="input-group-btn">
+          <button class="btn btn-success" type="submit">Add</button>
+        </span>
+      </div>
+    </form>
   </div>
 </div>
 
