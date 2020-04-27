@@ -20,6 +20,7 @@ from listings import urls as urls_listings
 from listings.views import all_listings
 from trunk import urls as urls_trunk
 from search import urls as urls_search
+from checkout import urls as urls_checkout
 from django.views import static
 from .settings import MEDIA_ROOT
 
@@ -29,6 +30,7 @@ urlpatterns = [
     url(r'^accounts/', include(urls_accounts)),
     url(r'^listings/', include(urls_listings)),
     url(r'^trunk/', include(urls_trunk)),
+    url(r'^checkout/', include(urls_checkout)),
     url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -11,6 +12,7 @@ def view_trunk(request):
     return render(request, 'trunk.html')
 
 
+@login_required
 def add_to_trunk(request, id):
     """
     Add the listing to trunk
@@ -31,7 +33,7 @@ def delete_item(request, id):
     quantity = int(request.POST.get('quantity'))
     trunk = request.session.get('trunk', {})
 
-    if quantity > 0:
+    if quantity <= 0:
         trunk[id] = quantity
     else:
         trunk.pop(id)
