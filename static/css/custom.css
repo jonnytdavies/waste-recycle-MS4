@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+    font-family: 'Anton', sans-serif;
+}
+
+.listing {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+caption p {
+    word-wrap: break-word;
+}
+
+.row .row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.panel-body {
+    height: 100%;
+    border: 1px solid #000;
+    padding:3px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #000;
+}
+
+.listing-description {
+    min-height: 40px;
+}
+
+.listing-center {
+    text-align: center;
+}
+
+.listing-card {
+    margin-bottom: 20px;
+}

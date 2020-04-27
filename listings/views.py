@@ -19,4 +19,4 @@ def create_listing_view(request):
     if listing_form.is_valid():
         listing_form.save()
 
-    return render(request, 'listings.html', {'listing_form': listing_form})
+    return render(request, 'createlisting.html', {'listing_form': listing_form})

@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load bootstrap_tags %}
+{% block page_title %}{{ listing.title }}{% endblock %}
+{% block page_heading %}{{ listing.title }}{% endblock %}
+{% block content %}
+
+<div class="row">
+  <div class="col-sm-12 col-md-6 listing-page-content">
+    <div class="listing-image">
+      <img src="{{ MEDIA_URL }}{{ listing.image }}" alt="Listing Image" />
+    </div>
+    <div class="listing-description">
+      <p>{{ listing.description}}</p>
+    </div>
+    <div class="listing-location">
+      <p>{{ listing.location }}</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+  <div class="listing-price">
+  <p>Price: £{{ listing.price }}</p>
+  </div>
+  <button>Add to trunk</button>
+  </div>
+</div>
+
+{% endblock %}
