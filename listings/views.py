@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from django.core.urlresolvers import reverse
-from .forms import CreateListing
+from listings.forms import CreateListing
 from .models import Listing
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
@@ -19,15 +19,14 @@ def get_listing(request, pk):
 
 
 @login_required
-def create_or_edit_listing(request):
+def create_listing(request):
     if request.method == 'POST':
-        listing_form = CreateListing(request.POST)
-        if listing_form.is_valid():
-            listing_form.save()
+        form = CreateListing(request.POST)
 
-            return HttpResponseRedirect(reverse('all_listings'))
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('listings'))
     else:
-        listing_form = CreateListing()
+        form = CreateListing()
 
-    return render(request, 'createlisting.html',
-                  {'listing_form': listing_form})
+    return render(request, 'createlisting.html', {'form': form})
