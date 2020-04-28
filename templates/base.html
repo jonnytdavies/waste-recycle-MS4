@@ -76,7 +76,7 @@
             class="form-inline my-2 my-lg-0"
           >
             <input
-              class="form-control mr-sm-2"
+              class="form-control search-box mr-sm-2"
               type="text"
               name="q"
               placeholder="Search"
@@ -90,7 +90,7 @@
       </nav>
     </header>
     <div class="container">
-      <h1>{% block page_heading %}{% endblock %}</h1>
+      <h1 class="page_title">{% block page_heading %}{% endblock %}</h1>
       <hr />
       {% if messages %}
       <div>

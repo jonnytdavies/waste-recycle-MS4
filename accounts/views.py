@@ -1,8 +1,15 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from accounts.forms import UserLoginForm, UserRegistrationForm, ValidationError
+from django.contrib.auth.forms import PasswordChangeForm
+from .forms import (
+    UserLoginForm,
+    UserRegistrationForm,
+    ValidationError,
+    ProfileEditForm
+)
 
 
 def index(request):
@@ -61,17 +68,49 @@ def registration(request):
     return render(request, 'registration.html', {"registration_form": registration_form})
 
 
+@login_required
 def user_profile(request):
     """The user's profile page"""
-    user = User.objects.get(email=request.user.email)
-    return render(request, 'profile.html', {"profile": user})
+    email = User.objects.get(email=request.user.email)
+    username = User.objects.get(username=request.user.username)
+    return render(request, 'profile.html', {"profile": username})
+
+
+@login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        form = ProfileEditForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "You have successfully updated your profile")
+            return redirect(reverse('profile'))
+    else:
+        form = ProfileEditForm(instance=request.user)
+        return render(request, 'editprofile.html', {'form': form})
+
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            messages.success(request, "You have been successfully changed your password")
+            return redirect(reverse('profile'))
+    else:
+        form = PasswordChangeForm(user=request.user)
+
+        return render(request, 'changepassword.html', {'form': form})
 
 
 def clean_email(self):
     email = self.cleaned_data.get('email')
     username = self.cleaned_data.get('username')
     if User.objects.filter(email=email).exclude(username=username):
-        raise forms.ValidationError(u'Email address must be unique')
+        raise ValidationError(u'Email address must be unique')
     return email
 
 

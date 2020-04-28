@@ -6,11 +6,18 @@
 {% block page_heading %}Create Listing{% endblock %}
 
 {% block content %}
-    
-    <form method="post" action="{% url 'create_listing' %}">
-      {% csrf_token %} {{ listing_form|as_bootstrap }}
+
+<form method="post" action="{% url 'create_listing' %}">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      {{ listing_form|as_bootstrap }}
+    </div>
+    <div class="col-sm-12 col-md-6">
+    <img src="{{ listing.image }}" alt="Listing Image Preview">
       <button type="submit" value="save">Post Listing</button>
-    </form>
+    </div>
+  </div>
+</form>
 
-    {% endblock %}
-
+{% endblock %}

@@ -9,6 +9,10 @@ body {
     background-color: #000;
 }
 
+.search-box {
+    border-color: #ffdeb6;
+}
+
 .btn {
     color: #ffdeb6;
     border-color: #ffdeb6;
@@ -43,9 +47,12 @@ caption p {
 .panel-body {
     height: 100%;
     border: 1px solid #000;
-    padding:10px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 2px 2px 4px #000;
+    background-color: #000;
+    color: #ffdeb6;
+}
 }
 
 .listing-page-description {
@@ -72,4 +79,13 @@ caption p {
     border: 1px solid #000;
     border-radius: 10px;
     box-shadow: 0 0 5px #000;
+}
+
+.form-control {
+    color: #c5c5c5;
+    background-color: #000;
+}
+
+.page_title {
+    margin-top:20px;
 }
