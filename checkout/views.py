@@ -23,9 +23,9 @@ def checkout(request):
             order.date = timezone.now()
             order.save()
 
-            trunk = request.session.get('trunk', {})
+            cart = request.session.get('cart', {})
             total = 0
-            for id, quantity in trunk.items():
+            for id, quantity in cart.items():
                 listing = get_object_or_404(Listing, pk=id)
                 total += quantity * listing.price
                 order_line_item = OrderLineItem(
@@ -47,7 +47,7 @@ def checkout(request):
 
             if customer.paid:
                 messages.error(request, "You have successfully paid")
-                request.session['trunk'] = {}
+                request.session['cart'] = {}
                 return redirect(reverse('all_listings'))
             else:
                 messages.error(request, "Unable to take your payment")

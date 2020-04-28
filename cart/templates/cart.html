@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
-{% block page_title %}Trunk{% endblock %}
-{% block page_heading %}Trunk{% endblock %}
+{% block page_title %}Cart{% endblock %}
+{% block page_heading %}Cart{% endblock %}
 {% block content %}
 
 <div class="row row-flex listing-card">
-  {% for item in trunk_items %}
+  {% for item in cart_items %}
   <div
     class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default"
   >
@@ -46,7 +46,7 @@
                 </div>
               </div>
               <div class="col-sm-6">
-                <button class="btn btn-primary" type="submit">Delete</button>
+                <button class="btn" type="submit">Delete</button>
               </div>
             </div>
           </div>

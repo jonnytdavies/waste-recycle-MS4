@@ -2,6 +2,23 @@
 
 body {
     font-family: 'Anton', sans-serif;
+    background-color: #ffdeb6;
+}
+
+.nav-bg {
+    background-color: #000;
+}
+
+.btn {
+    color: #ffdeb6;
+    border-color: #ffdeb6;
+    background-color: #000;
+}
+
+.btn:hover {
+    background-color:#464646;
+    color: #ffdeb6;
+    border-color: #ffdeb6;
 }
 
 .listing {
@@ -31,6 +48,13 @@ caption p {
     box-shadow: 2px 2px 4px #000;
 }
 
+.listing-page-description {
+    border-radius: 5px;
+    border: 1px solid #000;
+    margin: 20px 0;
+    padding: 5px;
+}
+
 .listing-description {
     min-height: 40px;
 }
@@ -44,6 +68,8 @@ caption p {
 }
 
 .listing-image {
-    max-width: 300px;
-    max-height: auto;
+    max-width: 100%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
 }

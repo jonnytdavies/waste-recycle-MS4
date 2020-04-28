@@ -2,23 +2,23 @@ from django.shortcuts import get_object_or_404
 from listings.models import Listing
 
 
-def trunk_contents(request):
+def cart_contents(request):
     """
-    Ensures that the trunk contents are
+    Ensures that the cart contents are
     Available when rendering every page
     """
 
-    trunk = request.session.get('trunk', {})
+    cart = request.session.get('cart', {})
 
-    trunk_items = []
+    cart_items = []
     total = 0
     listing_count = 0
-    for id, quantity in trunk.items():
+    for id, quantity in cart.items():
         listing = get_object_or_404(Listing, pk=id)
         total += quantity * listing.price
         listing_count += quantity
-        trunk_items.append({'id': id, 'quantity': quantity,
+        cart_items.append({'id': id, 'quantity': quantity,
                             'listing': listing})
 
-    return {'trunk_items': trunk_items, 'total': total,
+    return {'cart_items': cart_items, 'total': total,
             'listing_count': listing_count}

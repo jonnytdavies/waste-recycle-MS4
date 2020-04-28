@@ -1,1 +1,1 @@
-# Full-Stack Milestone Project - Junk To Your Trunk
+# Full-Stack Milestone Project - Junk To Your Cart

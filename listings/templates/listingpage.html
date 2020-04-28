@@ -4,22 +4,22 @@
 {% block content %}
 
 <div class="row">
-  <div class="col-sm-12 col-md-6 listing-page-content">
+  <div class="col-sm-12 col-md-9 listing-page-content">
     <div class="listing-image">
       <img src="{{ MEDIA_URL }}{{ listing.image }}" alt="Listing Image" class="listing-image"/>
     </div>
-    <div class="listing-description">
+    <div class="listing-page-description">
       <p>{{ listing.description}}</p>
     </div>
-    <div class="listing-location">
+    <div class="listing-page-location">
       <p>{{ listing.location }}</p>
     </div>
   </div>
-  <div class="col-sm-12 col-md-6">
+  <div class="col-sm-12 col-md-3">
     <div class="listing-price">
       <p>Price: £{{ listing.price }}</p>
     </div>
-    <form method="post" action="{% url 'add_to_trunk' listing.id %}">
+    <form method="post" action="{% url 'add_to_cart' listing.id %}">
       {% csrf_token %}
       <div class="input-group">
         <input
@@ -28,10 +28,10 @@
           min="1"
           max="1"
           class="form-control"
-          placeholder="Quantity"
+          placeholder="1"
         />
         <span class="input-group-btn">
-          <button class="btn btn-success" type="submit">Add</button>
+          <button class="btn" type="submit">Add to cart</button>
         </span>
       </div>
     </form>

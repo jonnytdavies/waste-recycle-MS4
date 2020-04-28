@@ -19,19 +19,13 @@ def get_listing(request, pk):
 
 
 @login_required
-def create_or_edit_listing(request, pk=None):
-    listing = get_object_or_404(Listing, pk=pk) if pk else None
+def create_or_edit_listing(request):
     if request.method == 'POST':
-        listing_form = CreateListing(request.POST,
-                                     request.FILES, instance=listing)
+        listing_form = CreateListing(request.POST)
         if listing_form.is_valid():
             listing_form.save()
 
-            return redirect(get_listing, listing.pk)
-
-        else:
-            listing_form = CreateListing(instance=listing)
-
+            return HttpResponseRedirect(reverse('all_listings'))
     else:
         listing_form = CreateListing()
 

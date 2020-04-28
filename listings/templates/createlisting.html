@@ -7,7 +7,7 @@
 
 {% block content %}
     
-    <form method="post" action="{% url 'all_listings' %}">
+    <form method="post" action="{% url 'create_listing' %}">
       {% csrf_token %} {{ listing_form|as_bootstrap }}
       <button type="submit" value="save">Post Listing</button>
     </form>

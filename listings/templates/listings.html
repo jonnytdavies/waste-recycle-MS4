@@ -16,7 +16,7 @@
       <p>{{ listing.location }}</p>
       <p>Collection Only</p>
       <p>Price: £{{ listing.price }}</p>
-      <a class="btn btn-info see-more-btn" href="{% url 'get_listing' listing.id %}">See More</a>
+      <a class="btn see-more-btn" href="{% url 'get_listing' listing.id %}">See More</a>
     </div>
   </div>
   {% endfor %}

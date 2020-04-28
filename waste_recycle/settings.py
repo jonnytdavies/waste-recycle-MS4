@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'junk-to-your-trunk.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'junk-to-your-cart.herokuapp.com']
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'accounts',
     'listings',
     'home',
-    'trunk',
+    'cart',
     'search',
     'checkout',
 ]
@@ -75,7 +75,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'trunk.contexts.trunk_contents',
+                'cart.contexts.cart_contents',
             ],
         },
     },
