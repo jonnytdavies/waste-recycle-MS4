@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    {% block head_js %}
-    {% endblock head_js %}
+    {% block head_js %} {% endblock head_js %}
     <title>{% block page_title %}{% endblock %}</title>
   </head>
 
@@ -56,7 +55,8 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'view_cart' %}">
-                <i class="fa fa-shopping-cart"></i> Cart {% if listing_count > 0 %}
+                <i class="fa fa-shopping-cart"></i> Cart
+                {% if listing_count > 0 %}
                 <label class="badge badge-warning">{{ listing_count }}</label>
                 {% endif %}
               </a>
@@ -98,5 +98,45 @@
       </div>
       {% endif %} {% block content %}{% endblock %}
     </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="footer-menu col-sm-12 col-md-4">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Terms & Conditions</a>
+              </li>
+            </ul>
+          </div>
+          <hr />
+          <div class="col-sm-12 col-md-4">
+            <h4 class="footer-heading">Follow Us On Social Media</h4>
+            <div class="row social-icons">
+              <div class="col-4">
+                <a href=""><i class="fa fa-facebook-square"></i></a>
+              </div>
+              <div class="col-4">
+                <a href=""><i class="fa fa-instagram"></i></a>
+              </div>
+              <div class="col-4">
+                <a href=""><i class="fa fa-twitter-square"></i></a>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="support col-sm-12 col-md-4">
+            <h3 class="support-heading">Support</h3>
+            <p>Email us: Support@junktoyourtrunk.com</p>
+            <p>Phone: 020 1234 4321</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
