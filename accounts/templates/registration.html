@@ -7,7 +7,7 @@
 </p>
 <form method="POST">
   {% csrf_token %} {{ registration_form|as_bootstrap }}
-  <button type="submit">Register</button>
+  <button class="btn" type="submit">Register</button>
 </form>
 
 {% endblock %}
