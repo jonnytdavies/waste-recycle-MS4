@@ -4,6 +4,9 @@ body {
     font-family: 'Anton', sans-serif;
     background-color: #ffdeb6;
 }
+.main-content {
+    margin-bottom: 50px;
+}
 
 .nav-bg {
     background-color: #000;
@@ -98,7 +101,13 @@ caption p {
     margin-top:20px;
 }
 
+select {
+    background-color: #ffdeb6;
+}
 
+.checkout-total {
+    font-size: 30px;
+}
 
 /* Footer */
 

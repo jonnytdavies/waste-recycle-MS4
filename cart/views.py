@@ -40,5 +40,5 @@ def delete_item(request, id):
 
 
     request.session['cart'] = cart
-    messages.success(request, "Your Cart is empty")
-    return redirect(reverse('all_listings'))
+    messages.success(request, "Item successfully deleted from your cart")
+    return redirect(reverse('view_cart'))

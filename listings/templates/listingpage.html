@@ -5,14 +5,19 @@
 
 <div class="row">
   <div class="col-sm-12 col-md-9 listing-page-content">
-    <div class="listing-image">
-      <img src="{{ MEDIA_URL }}{{ listing.image }}" alt="Listing Image" class="listing-image"/>
+    <div>
+      <img
+        src="{{ MEDIA_URL }}{{ listing.image }}"
+        alt="Listing Image"
+        class="listing-image"
+      />
     </div>
     <div class="listing-page-description">
+      <h4>Description:</h4>
       <p>{{ listing.description}}</p>
     </div>
     <div class="listing-page-location">
-      <p>{{ listing.location }}</p>
+      <p>Location: {{ listing.location }}</p>
     </div>
   </div>
   <div class="col-sm-12 col-md-3">
@@ -22,14 +27,9 @@
     <form method="post" action="{% url 'add_to_cart' listing.id %}">
       {% csrf_token %}
       <div class="input-group">
-        <input
-          name="quantity"
-          type="number"
-          min="1"
-          max="1"
-          class="form-control"
-          placeholder="1"
-        />
+        <select name="quantity"
+          ><option value="1">1</option></select
+        >
         <span class="input-group-btn">
           <button class="btn" type="submit">Add to cart</button>
         </span>
