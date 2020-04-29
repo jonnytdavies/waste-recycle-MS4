@@ -25,7 +25,7 @@ def create_listing(request):
 
         if form.is_valid():
             form.save()
-            return redirect(reverse('listings'))
+            return redirect(reverse('all_listings'))
     else:
         form = CreateListing()
 
