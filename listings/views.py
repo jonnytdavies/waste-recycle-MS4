@@ -4,6 +4,7 @@ from listings.forms import CreateListing
 from .models import Listing
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
+from pprint import pprint
 
 # Create your views here.
 
@@ -26,7 +27,8 @@ def get_listing(request, pk):
 @login_required
 def create_listing(request):
     if request.method == 'POST':
-        form = CreateListing(request.POST)
+        pprint(request.POST)
+        form = CreateListing(request.POST, request.FILES)
 
         if form.is_valid():
             form.save()

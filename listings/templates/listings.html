@@ -11,6 +11,7 @@
         class="listing"
         style="background-image: url('{{ MEDIA_URL }}{{ listing.image }}'"
       ></div>
+      <h3>{{ MEDIA_URL }}{{ listing.image }}</h3>
       <h3>{{ listing.title }}</h3>
       <p class="listing-description">{{ listing.description|truncatewords:15 }}</p>
       <p>{{ listing.location }}</p>
