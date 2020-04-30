@@ -11,7 +11,7 @@ This also has a benefit to anyone who uses such materials to make new things, so
 Off the back of this, profits would become donations that would be given to charities that promote sustainability. This way we might be able to create a cycle and reduce overall landfill to protect our planet.
 
 ### UX
-Wireframes can be found [here](https://github.com/jonnytdavies/waste-recycle-MS4/blob/d4fb869812e9858d4be459c7775ba37ce897ad4f/wireframes). 
+Wireframes can be found [here](https://github.com/jonnytdavies/waste-recycle-MS4/tree/master/wireframes). 
 
 Since beginning development on the site and understanding how elements worked together in practical terms, some elements of my original designs have changed, however the frames are very much the same
 
