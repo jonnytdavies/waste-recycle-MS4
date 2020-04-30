@@ -43,6 +43,10 @@ body {
   color: #ffdeb6;
 }
 
+.navbar-brand {
+    color: #ffdeb6!important;
+}
+
 .search-box {
   border-color: #ffdeb6;
 }
@@ -71,8 +75,15 @@ body {
     border-radius: 10px;
 }
 
+.left-list, .right-list {
+    padding: 15px;
+}
+
 .right-list {
     text-align: right;
+    background-color: #000;
+    color:#ffdeb6;
+    border-radius: 10px;
 }
 
 .listing {
