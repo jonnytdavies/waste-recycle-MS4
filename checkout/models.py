@@ -2,6 +2,7 @@ from django.db import models
 from listings.models import Listing
 
 
+# Model for the checkout form
 class Order(models.Model):
     full_name = models.CharField(max_length=60, blank=False)
     street_address1 = models.CharField(max_length=60, blank=False)
