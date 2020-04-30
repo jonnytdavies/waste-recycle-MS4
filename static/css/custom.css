@@ -9,8 +9,26 @@ body {
   margin-bottom: 50px;
 }
 
-/* carousel test class */
 
+/* Navbar styling */
+.nav-bg {
+  background-color: #000;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.nav-link {
+  color: #ffdeb6;
+}
+
+.navbar-brand {
+    color: #ffdeb6!important;
+}
+
+.search-box {
+  border-color: #ffdeb6;
+}
+
+/* Carousel Styling */
 .carousel-logo {
   height: 400px;
   margin: 0 auto;
@@ -34,23 +52,7 @@ body {
   margin-bottom: 5px;
 }
 
-.nav-bg {
-  background-color: #000;
-}
-
-.navbar-dark .navbar-nav .nav-link,
-.nav-link {
-  color: #ffdeb6;
-}
-
-.navbar-brand {
-    color: #ffdeb6!important;
-}
-
-.search-box {
-  border-color: #ffdeb6;
-}
-
+/* Button Styling */
 .btn {
   color: #ffdeb6;
   border-color: #ffdeb6;
@@ -67,6 +69,7 @@ body {
   font-size: 25px;
 }
 
+/* Main Site content */
 .site-info {
     margin: 15px 0;
     background-color: #000;
@@ -86,6 +89,7 @@ body {
     border-radius: 10px;
 }
 
+/* Styling for the listings */
 .listing {
   background-size: contain;
   background-position: center center;
@@ -158,12 +162,12 @@ select {
   background-color: #ffdeb6;
 }
 
+/* checkout page styling */
 .checkout-total {
   font-size: 30px;
 }
 
 /* Footer */
-
 footer {
   color: #ffdeb6;
   background-color: #000;
@@ -193,6 +197,7 @@ footer .fa {
   text-align: center;
 }
 
+/* Media queries */
 @media (min-width: 767px) {
   .footer-menu {
     text-align: left;

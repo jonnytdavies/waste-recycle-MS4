@@ -34,13 +34,13 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="{% url 'index' %}">Home</a>
             </li>
             {% if user.is_authenticated %}
+            <!--Will not be shown to a user unless they are logged in-->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'all_listings' %}">All Listings</a>
             </li>
@@ -63,6 +63,7 @@
               </a>
             </li>
             {% else %}
+            <!--Will only be shown to logged out users-->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
@@ -71,6 +72,7 @@
             </li>
             {% endif %}
           </ul>
+          <!--Searchbar for users to search for listings based on a location-->
           <form
             action="{% url 'search' %}"
             method="get"
@@ -100,6 +102,7 @@
       </div>
       {% endif %} {% block content %}{% endblock %}
     </div>
+    <!--Website Footer-->
     <footer>
       <div class="container">
         <div class="row">
@@ -141,7 +144,7 @@
       </div>
     </footer>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script>
+    <script> // To activate the carousel on the homepage
       $(".carousel").carousel("cycle")({
         interval: 2000,
       });

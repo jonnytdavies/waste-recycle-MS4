@@ -9,10 +9,8 @@
 
 <form enctype="multipart/form-data" method="POST" action="">
   <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-12">
       {% csrf_token %} {{ form|as_bootstrap }}
-    </div>
-    <div class="col-sm-12 col-md-6">
       <button class="btn post-button" type="submit">Post Listing</button>
     </div>
   </div>
