@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/jonnytdavies/waste-recycle-MS4.svg?branch=master)](https://travis-ci.org/jonnytdavies/waste-recycle-MS4)
 
 # Junk To Your Trunk - Code Institute Milestone Project 4
+
+You can view the running project on Heroku [here](https://junk-to-your-trunk.herokuapp.com/)
 ## Junk To Your Trunk Full-Stack E-commerce Website
 This project is based on a newfound passion of my Father’s to reduce waste. He is focusing on corporate sustainability and finding ways to reduce commercial waste, particularly waste materials that are usually sent to landfill. The purpose of this website is to create a platform where people who have waste materials, such as brick and wood can post to the community to find out if anyone else has a use for such materials before they pay for them to be sent to landfill.
 
@@ -9,7 +11,9 @@ This also has a benefit to anyone who uses such materials to make new things, so
 Off the back of this, profits would become donations that would be given to charities that promote sustainability. This way we might be able to create a cycle and reduce overall landfill to protect our planet.
 
 ### UX
-Wireframes can be found [here](). Since beginning development on the site and understanding how elements worked together in practical terms, some elements of my original designs have changed, however the frames are very much the same
+Wireframes can be found [here](https://github.com/jonnytdavies/waste-recycle-MS4/blob/d4fb869812e9858d4be459c7775ba37ce897ad4f/wireframes). 
+
+Since beginning development on the site and understanding how elements worked together in practical terms, some elements of my original designs have changed, however the frames are very much the same
 
 This website is built predominantly for manual labourers who have waste materials to dispose of, and for people who are looking to repurpose the same materials that these labourers are discarding.
 
@@ -211,7 +215,9 @@ I am happy with the way my navbar responds to smaller screen sizes and becomes a
 
 **All tests were done individually on Firefox, Chrome, Safari on Mac and iOS, and returned the same results. I have been unable to test Edge and Internet Explorer, or any browsers on PC.**
 ### Deployment
+This website has been deployed using Heroku, and can be found running [here](https://junk-to-your-trunk.herokuapp.com/)
 
+For more details on how to deploy a site to Heroku see this [video](https://www.youtube.com/watch?time_continue=4&v=XQcdS9mx97E&feature=emb_title)
 
 #### Credits
 The structure to a lot of this website came from what I learnt in the Code Institute lessons. Particular note must go to them for the accounts app, checkout and cart.
