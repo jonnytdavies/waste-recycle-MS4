@@ -38,7 +38,6 @@ def delete_item(request, id):
     else:
         cart.pop(id)
 
-
     request.session['cart'] = cart
     messages.success(request, "Item successfully deleted from your cart")
     return redirect(reverse('view_cart'))
