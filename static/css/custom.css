@@ -1,148 +1,193 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 body {
-    font-family: 'Anton', sans-serif;
-    background-color: #ffdeb6;
+  font-family: "Anton", sans-serif;
+  background-color: #ffdeb6;
 }
+
 .main-content {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+/* carousel test class */
+
+.carousel-logo {
+  height: 400px;
+  margin: 0 auto;
+}
+
+.carousel-listing {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.carousel-title {
+  background-color: #ffdeb6;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 3px;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 5px;
 }
 
 .nav-bg {
-    background-color: #000;
+  background-color: #000;
 }
 
-.navbar-dark .navbar-nav .nav-link, .nav-link {
-    color: #ffdeb6;
+.navbar-dark .navbar-nav .nav-link,
+.nav-link {
+  color: #ffdeb6;
 }
 
 .search-box {
-    border-color: #ffdeb6;
+  border-color: #ffdeb6;
 }
 
 .btn {
-    color: #ffdeb6;
-    border-color: #ffdeb6;
-    background-color: #000;
+  color: #ffdeb6;
+  border-color: #ffdeb6;
+  background-color: #000;
 }
 
 .btn:hover {
-    background-color:#464646;
+  background-color: #464646;
+  color: #ffdeb6;
+  border-color: #ffdeb6;
+}
+
+.post-button {
+  font-size: 25px;
+}
+
+.site-info {
+    margin: 15px 0;
+    background-color: #000;
     color: #ffdeb6;
-    border-color: #ffdeb6;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.right-list {
+    text-align: right;
 }
 
 .listing {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
 }
 
 caption p {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .row .row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .panel-default {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .panel-body {
-    height: 100%;
-    border: 1px solid #000;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #000;
-    background-color: #000;
-    color: #ffdeb6;
+  height: 100%;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #000;
+  background-color: #000;
+  color: #ffdeb6;
 }
 
-
 .listing-page-description {
-    border-radius: 5px;
-    border: 1px solid #000;
-    margin: 20px 0;
-    padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin: 20px 0;
+  padding: 5px;
 }
 
 .listing-description {
-    min-height: 40px;
+  min-height: 40px;
 }
 
 .listing-center {
-    text-align: center;
+  text-align: center;
 }
 
 .listing-card {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .listing-image {
-    max-width: 100%;
-    border: 1px solid #000;
-    border-radius: 10px;
-    box-shadow: 0 0 5px #000;
+  max-width: 100%;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #000;
 }
 
 .form-control {
-    color: #c5c5c5;
-    background-color: #000;
+  color: #c5c5c5;
+  background-color: #000;
 }
 
 .page_title {
-    margin-top:20px;
+  margin-top: 20px;
 }
 
 select {
-    background-color: #ffdeb6;
+  background-color: #ffdeb6;
 }
 
 .checkout-total {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 /* Footer */
 
 footer {
-    color: #ffdeb6;
-    background-color: #000;
-    padding: 10px 0;
+  color: #ffdeb6;
+  background-color: #000;
+  padding: 10px 0;
 }
 
-.footer-menu, .support {
-    text-align: center;
+.footer-menu,
+.support {
+  text-align: center;
 }
 
 footer ul li a:hover {
-    color: #c7bbac;
+  color: #c7bbac;
 }
 
 footer .fa {
-    color: #ffdeb6;
+  color: #ffdeb6;
 }
 
-.footer-heading, .support-heading {
-    text-align: center;
+.footer-heading,
+.support-heading {
+  text-align: center;
 }
 
 .social-icons {
-    font-size: 50px;
-    text-align: center;
+  font-size: 50px;
+  text-align: center;
 }
 
 @media (min-width: 767px) {
-    .footer-menu {
-        text-align: left;
-    }
-    .support-heading, .support {
-        text-align: right;
-    }
+  .footer-menu {
+    text-align: left;
+  }
+  .support-heading,
+  .support {
+    text-align: right;
+  }
 }

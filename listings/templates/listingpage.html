@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="row">
-  <div class="col-sm-12 col-md-9 listing-page-content">
+  <div class="col-sm-12 col-md-8 listing-page-content">
     <div>
       <img
         src="{{ MEDIA_URL }}{{ listing.image }}"
@@ -12,6 +12,8 @@
         class="listing-image"
       />
     </div>
+  </div>
+  <div class="col-sm-12 col-md-4">
     <div class="listing-page-description">
       <h4>Description:</h4>
       <p>{{ listing.description}}</p>
@@ -19,8 +21,7 @@
     <div class="listing-page-location">
       <p>Location: {{ listing.location }}</p>
     </div>
-  </div>
-  <div class="col-sm-12 col-md-3">
+
     <div class="listing-price">
       <p>Price: £{{ listing.price }}</p>
     </div>

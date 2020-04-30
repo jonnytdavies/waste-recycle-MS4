@@ -76,6 +76,7 @@
             class="form-inline my-2 my-lg-0"
           >
             <input
+              id="searchbar"
               class="form-control search-box mr-sm-2"
               type="text"
               name="q"
@@ -110,7 +111,7 @@
                 <a class="nav-link" href="{% url 'profile' %}">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">Terms & Conditions</a>
+                <a class="nav-link" href="{% url 'terms' %}">Terms & Conditions</a>
               </li>
             </ul>
           </div>
@@ -138,5 +139,10 @@
         </div>
       </div>
     </footer>
+    <script>
+      $(".carousel").carousel("cycle")({
+        interval: 2000,
+      });
+    </script>
   </body>
 </html>

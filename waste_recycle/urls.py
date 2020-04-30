@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
 from listings import urls as urls_listings
-from listings.views import all_listings
+from listings.views import home_listings
 from cart import urls as urls_cart
 from search import urls as urls_search
 from checkout import urls as urls_checkout
@@ -26,7 +26,7 @@ from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', all_listings, name='index'),
+    url(r'^$', home_listings, name='index'),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^listings/', include(urls_listings)),
     url(r'^cart/', include(urls_cart)),

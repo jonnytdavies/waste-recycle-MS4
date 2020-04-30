@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.urlresolvers import reverse
 from listings.forms import CreateListing
 from .models import Listing
@@ -6,6 +6,11 @@ from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
+
+def home_listings(request):
+    listings = Listing.objects.all()
+    return render(request, "homepage.html", {"listings": listings})
 
 
 def all_listings(request):
@@ -30,3 +35,7 @@ def create_listing(request):
         form = CreateListing()
 
     return render(request, 'createlisting.html', {'form': form})
+
+
+def terms(request):
+    return render(request, "terms.html")

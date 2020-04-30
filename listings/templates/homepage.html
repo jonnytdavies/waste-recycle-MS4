@@ -1,0 +1,126 @@
+{% extends 'base.html' %} {% load bootstrap_tags %} 
+{% block page_title %}Home{% endblock %}
+{% block page_heading %}Welcome To Junk To Your Trunk{% endblock %}
+{% block content %}
+
+<!--Carousel taken from Bootstrap documentation-->
+<div class="bd-example">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li
+        data-target="#carouselExampleCaptions"
+        data-slide-to="0"
+        class="active"
+      ></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active carousel-logo">
+        <img
+          src="/media/images/JunkLogo.png"
+          class="d-block w-100"
+          alt="Logo"
+        />
+        <div class="carousel-caption">
+          <h5 class="carousel-title">
+            Swipe or Click the arrows to view listings
+          </h5>
+        </div>
+      </div>
+      {% for listing in listings %}
+      <div class="carousel-item">
+        <div
+          class="carousel-listing"
+          style="background-image: url('{{ MEDIA_URL }}{{ listing.image }}'"
+        ></div>
+        <div class="carousel-caption">
+          <h5 class="carousel-title">{{ listing.title }}</h5>
+          <a class="btn" href="{% url 'get_listing' listing.id %}">See More</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleCaptions"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleCaptions"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<!--Section to explain the purpose of the site-->
+<div class="site-info">
+<h2>What is Junk To Your Trunk?</h2>
+<p>The aim of this website is to promote the reduction of waste, specifically from commercial and building sites.
+<br>
+Many people are finding ways to repurpose waste materials, such as brick or wood.
+<br>
+Use this site to list your waste materials, and if someone in the local area has a use for them, then they will purchase your listing, and come and take it off your hands.
+<br><br>
+As a buyer, you might be in search for these waste materials for a use on your own projects. Search by location to see if there are any listings near you.
+<br><br>
+All profits will be donated to charities promoting corporate sustainability.</p>
+</div>
+
+<!--User Instructions on how to use the site-->
+<div class="row">
+  <div class="col-12 col-md-6 left-list">
+    <h2>As a Buyer:</h2>
+    <p class="homepage-list">
+      1. Register an account
+      <a class="btn" href="{% url 'registration' %}">Here</a>
+    </p>
+    <p class="homepage-list">
+      2. <a class="btn" href="{% url 'login' %}">Login</a> to your account
+    </p>
+    <p class="homepage-list">
+      3. Browse <a class="btn" href="{% url 'all_listings' %}">All Listings</a>
+    </p>
+    <p class="homepage-list">4. Search for listings in a specific location</p>
+    <form
+      action="{% url 'search' %}"
+      method="get"
+      class="form-inline my-2 my-lg-0"
+    >
+      <input
+        id="searchbar"
+        class="form-control search-box mr-sm-2"
+        type="text"
+        name="q"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+  <div class="col-12 col-md-6 right-list">
+    <h2>As a Seller:</h2>
+    <p class="homepage-list">
+      Register an account
+      <a class="btn" href="{% url 'registration' %}">Here</a> .1
+    </p>
+    <p class="homepage-list">
+      <a class="btn" href="{% url 'login' %}">Login</a> to your account .2
+    </p>
+    <p class="homepage-list">
+      <a class="btn" href="{% url 'create_listing' %}">Create Listing</a>
+      .3
+    </p>
+  </div>
+</div>
+{% endblock %}
